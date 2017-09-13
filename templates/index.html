@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Email Validation (and Spam signup)</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/indexStyle.css')}}">
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <div id="redBox">
+                        <h2>Not a valid email!</h2>
+                    </div>
+                    <br>
+                    <br>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/addEmail" method="post">
+            <label for="email">Email: </label><input type="text" name="email">
+            <br>
+            <input type="submit" name="submit" value="submit">
+        </form>
+    </body>
+</html>

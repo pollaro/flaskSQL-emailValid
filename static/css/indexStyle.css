@@ -1,0 +1,9 @@
+*{
+    text-align: center;
+}
+
+#redBox{
+    background-color: red;
+    display: inline-block;
+    padding:1%;
+}

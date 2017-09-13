@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SUCCESS!</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/successStyle.css')}}">
+    </head>
+    <body>
+            <div id="greenBox">
+                <h2>The email you entered, {{ emailOut }}, is a VALID email</h2>
+            </div>
+            <br>
+            <br>
+        <table>
+            <tr>
+                <th>Email Addresses Entered</th>
+            </tr>
+            {% for email in emailList %}
+            <tr>
+                <td>{{ email['email'] }}</td>
+                <td>{{ email['created_at'].strftime('%-m/%-d/%Y %-I:%M %p')}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
